@@ -1,10 +1,7 @@
-n = int(input())
-m = n % 10
-if 10 < n < 20 or m == 0:
-    print(n, 'korov')
-elif 5 <= m <= 9:
-    print(n, 'korov')
-elif m == 1:
-    print(n, 'korova')
+x = int(input())
+if x > 0:
+    print(1)
+elif x == 0:
+    print(0)
 else:
-    print(n, 'korovy')
+    print(-1)
