@@ -1,7 +1,6 @@
-N = int(input())
-max = N
-while N != 0:
-    N = int(input())
-    if N > max and N != 0:
-        max = N
-print(max)
+n = int(input())
+i, s = 1, 0
+while i <= n:
+    s += i ** 2
+    i += 1
+print(s)
