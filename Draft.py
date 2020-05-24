@@ -1,1 +1,1 @@
-print(min(filter(lambda x: x % 2 == 1, map(int, input().split()))))
+print(not (all(map(int, open('input.txt').read().split()))))
