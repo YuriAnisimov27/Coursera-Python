@@ -1,3 +1,9 @@
+class ComplexError(BaseException):
+    def __init__(self, complex, other):
+        self.first = complex
+        self.second = other
+
+
 class Complex:
     def __init__(self, re=0, im=0):
         self.re = re
@@ -16,10 +22,19 @@ class Complex:
         elif isinstance(other, int) or isinstance(other, float):
             re = self.re * other
             im = self.im * other
+        else:
+            error = ComplexError(self, other)
+            raise error
         return Complex(re, im)
+
     __rmul__ = __mul__
 
 
+a = Complex()
 b = Complex(1, 1)
 c = Complex(2, 3)
-print(3 * b)
+try:
+    print('asd' * b)
+except ComplexError as ce:
+    print('Multiplication error, first param: ', ce.first,
+          ' second param: ', ce.second)
